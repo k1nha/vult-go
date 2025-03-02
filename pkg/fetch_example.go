@@ -1,11 +1,11 @@
-package main
+package pkg
 
 import (
 	"encoding/json"
 	"fmt"
 )
 
-func main() {
+func Example() {
 	config := &FetchConfig{
 		method: "GET",
 		body:   nil,
@@ -22,5 +22,8 @@ func main() {
 		Completed bool   `json:"completed"`
 	}
 	err = decoder.Decode(&t)
+	if err != nil {
+		panic(err)
+	}
 	fmt.Println(t.Title)
 }
