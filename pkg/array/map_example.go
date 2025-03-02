@@ -2,7 +2,7 @@ package array
 
 import "fmt"
 
-func Example() {
+func MapExample() {
 	arry := Array[int]{
 		Items: []int{1, 2, 4},
 	}
