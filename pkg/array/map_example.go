@@ -10,6 +10,6 @@ func MapExample() {
 		return i * 3
 	})
 	for i := range len(arryMultiple) {
-		fmt.Println(arryMultiple[i]) // 2, 4, 8
+		fmt.Println(arryMultiple[i]) // 3, 6, 12
 	}
 }
