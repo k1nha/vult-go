@@ -2,7 +2,9 @@
 
 Esse repositório serve como guia para algumas implementações de ferramentas para utilizar
 
-- Node
+- Fetch Adapter
+- Array
   - Map
-  - Fetch
-  -  
+  - Find
+  - Filter
+  - Reduce
