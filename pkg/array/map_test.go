@@ -8,7 +8,7 @@ import (
 )
 
 func TestMapWithStrings(t *testing.T) {
-	stringArray := array.Array[string]{Items: []string{"a", "b", "c"}}
+	stringArray := array.NewArray("a", "b", "c")
 	mappedStrings := stringArray.Map(func(s string) string {
 		return s + s
 	})
@@ -19,9 +19,7 @@ func TestMapWithStrings(t *testing.T) {
 }
 
 func TestMap(t *testing.T) {
-	got := array.Array[int]{
-		Items: []int{1, 2, 3},
-	}
+	got := array.NewArray(1, 2, 3)
 	mapped := got.Map(func(i int) int {
 		return i * i
 	})

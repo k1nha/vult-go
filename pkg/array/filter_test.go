@@ -8,9 +8,7 @@ import (
 )
 
 func TestFilter(t *testing.T) {
-	arry := array.Array[int]{
-		Items: []int{1, 2, 4},
-	}
+	arry := array.NewArray(1, 2, 3)
 	filtered := arry.Filter(func(i int) bool {
 		return i%2 == 0
 	})

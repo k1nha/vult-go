@@ -12,9 +12,7 @@ type Product struct {
 }
 
 func TestSumAllValues(t *testing.T) {
-	arr := array.ReduceArray[int, int]{
-		Items: []int{1, 2, 3, 4, 5},
-	}
+	arr := array.NewReduceArray[int, int](1, 2, 3, 4, 5)
 	want := 15
 	got := arr.Reduce(func(accumulator, item int) int {
 		return accumulator + item
@@ -23,18 +21,17 @@ func TestSumAllValues(t *testing.T) {
 }
 
 func TestSumPrices(t *testing.T) {
-	arr := array.ReduceArray[Product, int]{
-		Items: []Product{
-			{
-				Name:  "Pencil",
-				Price: 2,
-			},
-			{
-				Name:  "Pen",
-				Price: 4,
-			},
+	products := []Product{
+		{
+			Name:  "Pencil",
+			Price: 2,
+		},
+		{
+			Name:  "Pen",
+			Price: 4,
 		},
 	}
+	arr := array.NewReduceArray[Product, int](products...)
 	got := arr.Reduce(func(accumulator int, item Product) int {
 		return item.Price + accumulator
 	}, 0)

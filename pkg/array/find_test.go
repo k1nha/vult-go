@@ -13,20 +13,18 @@ type Car struct {
 }
 
 var cars = []Car{
-	Car{
+	{
 		Id:   1,
 		Name: "bmw",
 	},
-	Car{
+	{
 		Id:   2,
 		Name: "audi",
 	},
 }
 
 func TestFind(t *testing.T) {
-	arr := array.Array[Car]{
-		Items: cars,
-	}
+	arr := array.NewArray(cars...)
 	find := arr.Find(func(c Car) bool {
 		return c.Name == "bmw"
 	})
@@ -37,9 +35,7 @@ func TestFind(t *testing.T) {
 }
 
 func TestCannotFind(t *testing.T) {
-	arr := array.Array[Car]{
-		Items: cars,
-	}
+	arr := array.NewArray(cars...)
 	find := arr.Find(func(c Car) bool {
 		return c.Name == "mercedes"
 	})
